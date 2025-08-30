@@ -1,0 +1,9 @@
+envolvido_task:
+  description: >
+    Reescreva o caption fornecido mantendo exatamente o mesmo significado e essência do texto original.
+    O objetivo é melhorar a clareza e impacto sem alterar a mensagem principal.
+  expected_output: >
+    Uma versão reescrita do caption original que mantém o mesmo significado e essência,
+    mas com melhor clareza e impacto.
+  agent: caption_agent
+
