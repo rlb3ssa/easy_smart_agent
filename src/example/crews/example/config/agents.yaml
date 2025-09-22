@@ -1,4 +1,4 @@
-resumo_agent:
+example_agent:
   role: >
     Gerar captions
   goal: >

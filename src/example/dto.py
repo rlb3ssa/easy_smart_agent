@@ -5,17 +5,16 @@ from datetime import datetime
 
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from pydantic import BaseModel
-from mariza.crews.artigo.crew import ArtigoCrew
-from mariza.crews.concurso.crew import ConcursoCrew
-from mariza.crews.envolvido.crew import EnvolvidoCrew
-from mariza.crews.resumo.crew import ResumoCrew
-from mariza.dto import BaseResponse
-from mariza.dto import Process
+from src.example.dto import BaseResponse
+from src.example.dto import Process
 from typing import Optional, Dict, Any, List
 
-from mariza.service.embed_service import embed_file_to_knowledge
-from mariza.service.extract_service import extract_and_save
-from mariza.service.ocr_service import process_pdfs
+from src.example.service.embed_service import embed_file_to_knowledge
+from src.example.service.extract_service import extract_and_save
+from src.example.service.ocr_service import process_pdfs
+
+from src.example.crews.example.crew import ExampleCrew
+from src.example.crews.example_with_embeddings.crew import ExampleWithEmbeddingsCrew
 
 app = FastAPI(
     title="Example Project",
@@ -72,13 +71,9 @@ async def process_example(
 
         data["case_id"] = case_id
 
-        data["artigos"] = ArtigoCrew().crew().kickoff(inputs=inputs).raw
+        data["example"] = ExampleCrew().crew().kickoff(inputs=inputs).raw
 
-        data["concursos"] = ConcursoCrew().crew().kickoff(inputs=inputs).raw
-
-        data["envolvidos"] = EnvolvidoCrew().crew().kickoff(inputs=inputs).raw
-
-        data["resumo_comentado"] = ResumoCrew().crew().kickoff(inputs=inputs).raw
+        data["example_with_embeddings"] = ExampleWithEmbeddingsCrew().crew().kickoff(inputs=inputs).raw
 
         process_data = Process(**data)
 

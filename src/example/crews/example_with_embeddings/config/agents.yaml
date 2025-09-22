@@ -1,4 +1,4 @@
-concurso_agent:
+example_with_embeddings_agent:
   role: >
     Gerar captions
   goal: >

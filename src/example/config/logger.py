@@ -5,7 +5,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
         logging.StreamHandler(),  # console
-        # logging.FileHandler("logs/uLawyer.log")  # arquivo
+        # logging.FileHandler("logs/example.log")  # arquivo
     ]
 )
 
@@ -14,9 +14,6 @@ def get_logger(name: str = __name__):
 
 
 # Como usar:
-# from uLawyer.config import logger
+# from example.config import logger
 # logger = logger.get_logger(__name__)
 # logger.info(f"Mensagem de exemplo: {self.agents} | {var_qualquer}")
-#
-#
-#
