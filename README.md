@@ -1,4 +1,5 @@
-# Upubly Crew
+# Easy Agent
+This is the implementation of a personal smart agent with FastAPI. With this example, you will be able to understand the basic aspects of creating an agent with CrewAI and perform queries through API calls.
 
 ## Installation
 
